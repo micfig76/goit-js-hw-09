@@ -1,0 +1,1 @@
+{"version":3,"file":"gallery.js","sources":["../src/javaScript/01-gallery.js"],"sourcesContent":["import SimpleLightbox from \"simplelightbox\";\n\nconst lightbox = new SimpleLightbox('ul.gallery li', {\n    captionType: \"alt\"\n});"],"names":["SimpleLightbox"],"mappings":"oFAEiB,IAAIA,EAAe,gBAAiB,CACjD,YAAa,KACjB,CAAC"}
