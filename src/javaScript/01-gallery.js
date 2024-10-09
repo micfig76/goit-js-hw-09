@@ -1,7 +1,7 @@
 import SimpleLightbox from "simplelightbox";
 import { images } from "./images.js";
 import { initImages } from "./gallery";
-
+import "simplelightbox/dist/simple-lightbox.min.css";
 
     document.querySelector(".gallery").appendChild(initImages(images));
 
