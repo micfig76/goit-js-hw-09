@@ -34,46 +34,24 @@
     <main>
         <div class="container">
             <a href="index.html">Go to Home</a>
-            <h1 class="main-title">
-                <span class="main-title-gradient">Welcome</span> to page 2
-            </h1>
+           
         import SimpleLightbox from "simplelightbox";
-
 import { images } from "./images.js";
+import { initImages } from "./gallery";
 
 
-const createImage = ({ preview, original, description }) => {
-    const li = document.createElement("li");
-    li.classList.add("gallery-item");
+    document.querySelector(".gallery").appendChild(initImages(images));
 
-    li.innerHTML = 
-        `<a class="gallery-link" href="${original}">
-            <img
-                class="gallery-image"
-                src="${preview}"
-                alt="${description}"
-            />
-        </a>`;
-    return li;
-};
 
-const initImages = (images) => {
-    const imgs = images.map(createImage);
 
-    const fragment = document.createDocumentFragment();
-    fragment.append(...imgs);
-    return fragment;
-};
-
-const main = (root, images) => {
-    document.querySelector(root).appendChild(initImages(images));
-};
-
-main(".gallery", images);
-
-const lightbox = new SimpleLightbox("ul.gallery li", {
+const lightbox = new SimpleLightbox("ul.gallery li a", {
     captionType: "alt",
-    sourceAttr: "href"
+    sourceAttr: "href",
+    overlay: true,
+});
+
+lightbox.options('show.simplelightbox', function () {
+    console.log("lightbox.on")
 });
       </div>
     </main>
