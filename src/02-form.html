@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gallery</title>
+ 
+    <title>Gallery</title>
     <script type="module" src="./javaScript/02-form.js" defer></script>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/form.css">
 </head>
+
 <body>
-    <h1 class="main-title">
-        <span class="main-title-gradient">Welcome</span> to Page 2
-      </h1>
-    <ul class="gallery"
-    >
-        <li class="gallery-item">
-            <a class="gallery-link" href="./javaScript/gallery.js">
-                <img 
-                class="gallery-image" 
-                src="small-image.jpg" 
-                alt="Image description" 
-                />
-            </a>
-        </li>
-    </ul>
-   
-    </body>
-    
+
+    <form class="form-feedback" autocomplete="off">
+       
+            <div class="input-group">
+                <label class="form-label">Email</label>
+                <input class="form-input" type="email" placeholder="Type area" name="email" autofocus />
+            </div>
+
+            <div class="input-group">
+                <label class="form-label">Message</label>
+                <textarea class="form-text" name="message" rows="8"></textarea>
+            </div>
+            <div class="btn">
+                <button class="submit-btn" type="submit">Submit</button>
+            </div>
+        
+    </form>
+
 </body>
+
 </html>
