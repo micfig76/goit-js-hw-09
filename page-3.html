@@ -35,23 +35,25 @@
         <div class="container">
             <a href="index.html">Go to Home</a>
            
-        import SimpleLightbox from "simplelightbox";
-import { images } from "./images.js";
-import { initImages } from "./gallery";
-import "simplelightbox/dist/simple-lightbox.min.css";
+        const feedbackForm = document.querySelector('.form-feedback');
 
-    document.querySelector(".gallery").appendChild(initImages(images));
+feedbackForm.addEventListener('submit', (event) => {
+  event.preventDefault();
 
+  const formData = new FormData(feedbackForm);
+  const email = formData.get('email');
+  const message = formData.get('message');
 
+  if (typeof(Storage) !== "undefined") {
+    localStorage.setItem('feedbackEmail', email);
+    localStorage.setItem('feedbackMessage', message);
+  } else {
+    console.log('Local storage is not supported in this browser.');
+  }
 
-const lightbox = new SimpleLightbox("ul.gallery li a", {
-    captionType: "alt",
-    sourceAttr: "href",
-    overlay: true,
-});
+  feedbackForm.reset();
 
-lightbox.options('show.simplelightbox', function () {
-    console.log("lightbox.on")
+  console.log('Feedback submitted:', email, message);
 });
       </div>
     </main>
